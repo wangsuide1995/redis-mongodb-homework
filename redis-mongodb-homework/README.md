@@ -1,10 +1,10 @@
-####2019-12-13
+####  2019-12-13
 
-##备注：Redisd的作业在redisController中，还有页面在tempates中；mongodb的作业在UserContrller中。
+##  备注：Redisd的作业在redisController中，还有页面在tempates中；mongodb的作业在UserContrller中。
 
 ###  Redis +  mongodb笔记
 
-###一、Redis和Memcache的相同点和不同点
+###  一、Redis和Memcache的相同点和不同点
 
      1、Redis和Memcache都是将数据存放在内存中，都是内存数据库。不过memcache还可用于缓存其他东西，例如图片、视频等等。 
      2、Redis不仅仅支持简单的k/v类型的数据，同时还提供list，set，hash等数据结构的存储。 
@@ -26,11 +26,11 @@
      4、运行环境不同： 
      redis目前官方只支持LINUX 上去行，从而省去了对于其它系统的支持，这样的话可以更好的把精力用于本系统 环境上的优化，虽然后来微软有一个小组为其写了补丁，但是没有放到主干上。
      
- ###二、Redis和Memcache的应用场景
+ ###  二、Redis和Memcache的应用场景
  
     有持久化需求或者对数据结构和处理有高级要求的应用，选择redis，其他简单的key/value存储，选择memcache。
     
- ###三、Redis的基本规范
+ ###  三、Redis的基本规范
  
      redis是一种高级的key-value的存储系统
      
@@ -39,7 +39,7 @@
      2）key不要太短，如果太短会降低key的可读性
      3）在项目中，key最好有一个统一的命名规范
      
- ###四、Redis的value支持五种数据类型
+ ###  四、Redis的value支持五种数据类型
  ####    1）字符串型 string
  
      字符串类型是Redis中最为基础的数据存储类型，它在Redis中是二进制安全的，这便意味着该类型可以接受任何格式的数据，如JPEG图像数据或Json对象描述信息等。	
