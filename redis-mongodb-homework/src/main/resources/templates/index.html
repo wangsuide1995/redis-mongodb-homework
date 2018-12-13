@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Redis + mongodb</title>
+</head>
+    <body>
+        <h1>欢迎使用 Redis + mongodb!</h1>
+            当前登录账号：<label th:text="user"></label>
+            <p>点击 <a th:href="@{/hello}">这里</a> 打个招呼吧</p>
+            <p> <a th:href="@{/admin}">admin page</a></p>
+            <p><a th:href="@{/user}">user page</a></p>
+        <div>
+            <label><a href="/">退出登录</a></label>
+        </div>
+    </body>
+</html>
