@@ -24,16 +24,16 @@ public class redisController {
     }
 
     //生成验证码，并存入redis中，并设置过期时间，过期后自动注销
-    @RequestMapping("/smsa")
-    public String  sms(Model model, HttpSession session){
+    @RequestMapping("/smsa/{phone}")
+    public String  sms(Model model, HttpSession session,@PathVariable String phone){
         //生成6位数的验证码
         String code = RandomStringUtils.randomNumeric(6);
         //判断当前的redis中的key为“number2”的size为多少
-        if (stringRedisTemplate.opsForList().size("number2")<3){
+        if (stringRedisTemplate.opsForList().size(phone)<3){
             //当前缓存中size如果小于3的话，从新发送验证码
-            stringRedisTemplate.opsForList().leftPush("number2", code);
+            stringRedisTemplate.opsForList().leftPush(phone, code);
             //设置key的过期时间为60秒
-            stringRedisTemplate.expire("number2", 600, TimeUnit.SECONDS);//设置过期时间
+            stringRedisTemplate.expire(phone, 600, TimeUnit.SECONDS);//设置过期时间
 
             model.addAttribute("send","已发送");
             model.addAttribute("sms",code);
