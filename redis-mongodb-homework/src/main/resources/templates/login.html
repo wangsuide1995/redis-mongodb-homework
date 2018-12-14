@@ -4,9 +4,8 @@
     <title>Redis + mongodb</title>
 </head>
 <body>
-    <div><label> 用户名 : <input type="text" value="user"/> </label></div>
-    <div><label> 密码: <input type="password" value="123456"/> </label></div>
-    <div><a href="/smsa">发送验证码</a></div>
+    <div><label> 手机号 : <input type="text" id="phone" /></label></div>
+    <div><button onclick="send()">发送验证码</button></div>
     <div><span th:text="${send}" style="color: chartreuse"></span></div>
     <div><span th:text="${fail}" style="color: red"></span></div>
     <div><label>验证码: <input id="sms" type="text" name="sms"/></label></div>
@@ -18,6 +17,11 @@
         function smssss() {
             var num = document.getElementById("sms").value;
             window.location.href="/index/"+num;
+        }
+
+        function send() {
+            var phone = document.getElementById("phone").value;
+            window.location.href="/smsa/"+phone;
         }
     </script>
 
